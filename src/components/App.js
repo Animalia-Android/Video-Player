@@ -1,55 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
-import SearchBar from './SearchBar';
-import VideoList from './VideoList';
-import youtube from '../apis/youtube';
-import VideoDetail from './VideoDetail';
+import SearchBar from "./SearchBar";
+import VideoList from "./VideoList";
+// import youtube from "../apis/youtube";
+import VideoDetail from "./VideoDetail";
+import useVideos from "../hooks/useVideos";
 
-class App extends React.Component {
-  state = { videos: [], selectedVideo: null };
+const App = () => {
+  // THIS IS THE ORGINAL COMPONENT WITHOUT CUSTOM HOOKS
+  // const [videos, setVideos] = useState([]);
+  // const [selectedVideo, setSelectedVideos] = useState(null);
 
-  componentDidMount() {
-    this.onSearchTermSubmit('halloween!!!');
-  }
+  // useEffect(() => {
+  //   onTermSubmit("halloween");
+  // }, []);
 
-  onSearchTermSubmit = async (searchTerm) => {
-    const response = await youtube.get('/search', {
-      params: {
-        q: searchTerm,
-      },
-    });
-    console.log('RESPOSE', response);
-    this.setState({
-      videos: response.data.items,
-      selectedVideo: response.data.items[0],
-    });
-  };
+  // setSelectedVideos(response.data.items[0]);
 
-  onVideoSelect = (video) => {
-    this.setState({ selectedVideo: video });
-  };
+  // const onTermSubmit = async (searchTerm) => {
+  //   const response = await youtube.get("/search", {
+  //     params: {
+  //       q: searchTerm,
+  //     },
+  //   });
 
-  render() {
-    return (
-      <div className="ui container">
-        <h1>Video Searcher</h1>
-        <SearchBar onFormSubmit={this.onSearchTermSubmit} />
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-            </div>
-            <div className="five wide column">
-              <VideoList
-                onVideoSelect={this.onVideoSelect}
-                videos={this.state.videos}
-              />
-            </div>
+  //   setVideos(response.data.items);
+  // };
+
+  // const onVideoSelect = (video) => {
+  //   setSelectedVideos(video);
+  // };
+
+  //THIS IS THE SAME APP COMPONENT WITH CUSTOM HOOKS
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [videos, search] = useVideos("halloween");
+
+  useEffect(() => {
+    setSelectedVideo(videos[0]);
+  }, [videos]);
+
+  return (
+    <div className="ui container">
+      <h1>YouTuber</h1>
+      <SearchBar onFormSubmit={search} />
+      <div className="ui grid">
+        <div className="ui row">
+          <div className="eleven wide column">
+            <VideoDetail video={selectedVideo} />
+          </div>
+          <div className="five wide column">
+            <VideoList
+              onVideoSelect={(video) => setSelectedVideo(video)}
+              videos={videos}
+            />
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
