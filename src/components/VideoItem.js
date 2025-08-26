@@ -2,9 +2,10 @@ import React from 'react';
 import './VideoItem.css';
 
 const VideoItem = ({ video, onVideoSelect }) => {
+  console.log('VideoItem component rendered', video.snippet.title);
   return (
     <div
-      className="video-item item"
+      className="video-item item ui medium rounded image"
       onClick={() => {
         onVideoSelect(video);
       }}

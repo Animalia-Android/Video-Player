@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const SearchBar = ({ onFormSubmit }) => {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState('');
 
   // const onInputChange = (event) => {
   //   setTerm(event.target.value);
@@ -14,7 +14,13 @@ const SearchBar = ({ onFormSubmit }) => {
   };
 
   return (
-    <div className="search-bar ui segment">
+    <div
+      className="search-bar ui segment"
+      style={{
+        border: '1px solid var(--brand-orange)',
+        borderRadius: '6px',
+      }}
+    >
       <form className="ui form" onSubmit={onSubmit}>
         <div className="field">
           <label>Video Search</label>

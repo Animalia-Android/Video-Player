@@ -1,0 +1,50 @@
+/* global.css */
+:root {
+  /* Core */
+  --brand-green: #2e563d;
+  --brand-orange: #e29543;
+  --brand-sky: #5dadec;
+
+  /* Neutrals */
+  --neutral-dark: #222; /* text */
+  --neutral-mid: #666; /* muted text, borders */
+  --neutral-light: #f4f4f4; /* backgrounds, containers */
+  --neutral-white: #ffffff;
+
+  /* Accent Shades */
+  --green-light: #4d7c5f; /* hover state */
+  --orange-light: #f5b77a; /* subtle backgrounds */
+  --sky-light: #a3d4f9; /* soft highlights */
+  --gold-light: #f1d67a;
+
+  /* Complementary Pop (optional) */
+  --brand-plum: #6e3d5d; /* adds contrast for special actions */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--brand-sky);
+  color: #222;
+  padding: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Example: reusable classes */
+.btn {
+  background: var(--brand-green);
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 48px;
+  width: auto;
+  display: block;
+}

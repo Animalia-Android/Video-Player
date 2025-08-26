@@ -9,10 +9,13 @@ const VideoDetail = ({ video }) => {
 
   return (
     <div>
-      <div className="ui embed">
+      <div
+        className="ui embed rounded-embed"
+        style={{ borderRadius: '5px', overflow: 'hidden' }}
+      >
         <iframe title="video player" src={videoSrc} />
       </div>
-      <div className="ui segment">
+      <div className="ui segment  rounded-segment">
         <h4 className="ui header">{video.snippet.title}</h4>
         <p>{video.snippet.description}</p>
       </div>

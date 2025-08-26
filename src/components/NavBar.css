@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+  flex-shrink: 0; /* don't let flex shrink the logo */
+}
+
+.navbar-brand img {
+  height: 48px; /* pick your “present” size */
+  max-height: 56px; /* guard */
+  width: auto; /* keep aspect ratio */
+  display: block;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
