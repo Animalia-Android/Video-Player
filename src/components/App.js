@@ -36,7 +36,7 @@ const App = () => {
 
   //THIS IS THE SAME APP COMPONENT WITH CUSTOM HOOKS
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [videos, search] = useVideos('Fall');
+  const [videos, search] = useVideos('Technology');
 
   useEffect(() => {
     setSelectedVideo(videos[0]);

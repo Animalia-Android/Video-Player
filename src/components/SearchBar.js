@@ -19,6 +19,12 @@ const SearchBar = ({ onFormSubmit }) => {
       style={{
         border: '1px solid var(--brand-orange)',
         borderRadius: '6px',
+        margin: '10px',
+        width: 'auto',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        backgroundColor: 'white',
+        padding: '10px',
+        maxWidth: '1240px',
       }}
     >
       <form className="ui form" onSubmit={onSubmit}>

@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav class="navbar">
       <div class="navbar-brand">
         <a href="/">
-          <img src="/ScoutOutNav.png" alt="ScoutOut" />
+          <img src="/VidVaultFavicon.png" alt="VidVault" />
         </a>
       </div>
 

@@ -4,8 +4,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background: #fff;
+  background: var(--orange-light);
   border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  gap: 1rem;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* stay on top */
+  backdrop-filter: blur(10px); /* optional: blur background */
+  margin-bottom: 1rem; /* space below navbar */
+  transition: background 0.3s ease; /* smooth background transition */
+  border-color: var(--brand-green); /* match brand color */
 }
 
 .navbar-brand {
